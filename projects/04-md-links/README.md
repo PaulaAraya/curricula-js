@@ -41,7 +41,7 @@ Tópicos: [Semver](https://semver.org/), [Node.js](https://nodejs.org/en/),
 
 ## Consideraciones generales
 
-Este proyecto se debe "resolver" en parejas.
+Este proyecto se debe "resolver" de manera individual.
 
 La librería debe estar implementada en JavaScript para ser ejecutada con
 Node.js. Está permitido usar librerías externas y te recomendamos echar un
@@ -57,7 +57,7 @@ _lines_ y _branches_.
 Para comenzar este proyecto tendrás que hacer un _fork_ y _clonar_ este
 repositorio.
 
-Una vez creados los equipos, es hora de crear un plan de acción. Esto debería
+Es hora de crear un plan de acción. Esto debería
 quedar detallado en el `README.md` de tu repo así como en una serie de _issues_
 y _milestones_ para coordinar el trabajo y poder hacer seguimiento del progreso.
 
@@ -103,10 +103,7 @@ siguiente interfaz:
 
 ##### Argumentos
 
-* `path`: Ruta absoluta o relativa al archivo markdown o directorio donde buscar
-  archivos markdown de forma recursiva. Si la ruta pasada es relativa, debe
-  resolverse como relativa al directorio desde donde se invoca node - _current
-  working directory_).
+* `path`: Ruta absoluta o relativa al archivo markdown.
 * `options`: Un objeto con las siguientes propiedades:
   - `validate`: ...
   - `exclude`: ...
@@ -145,12 +142,11 @@ mdLinks('./some/dir', { validate: true })
 El ejecutable de nuestra aplicación debe poder ejecutarse de la siguiente
 manera:
 
-`md-links <path-to-dir-or-file> [options]`
+`md-links <path-to-file> [options]`
 
 Por ejemplo:
 
 ```sh
-$ md-links ./some/dir/
 ./some/dir/README.md:30 http://algo.com/2/3/ Link a algo
 ./some/dir/README.md:44 https://otra-cosa.net/algun-doc.html algún doc
 ./some/dir/CONTRIBUTING.md:12 http://google.com/ Google
@@ -182,29 +178,6 @@ $ md-links ./some/dir/ --validate
 Vemos que el _output_ en este caso incluye la palabra `ok` o `fail` después de
 la URL, así como el status de la respuesta recibida a la petición HTTP a dicha
 URL.
-
-##### `--stats`
-
-Si pasamos la opción `--stats` el output (salida) será un texto con estadísticas
-básicas sobre los links.
-
-```sh
-$ md-links ./some/dir/ --stats
-Total: 3
-Unique: 3
-Domains: 3
-```
-
-También podemos combinar `--stats` y `--validate` para obtener estadísticas que
-necesiten de los resultados de la validación.
-
-```sh
-$ md-links ./some/dir/ --stats --validate
-Total: 3
-Unique: 3
-Domains: 3
-Broken: 1
-```
 
 ## Hacker edition
 
