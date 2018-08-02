@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Registro de Visitantes
 
 ## Preámbulo
@@ -167,3 +168,6 @@ Host: smtp.mandrillapp.com
 Port: 587
 SMTP Username: Laboratoria.La
 SMTP Password: Yjbhl-WzBGJbqv5w5n-y9w
+=======
+Readme
+>>>>>>> upstream/master
