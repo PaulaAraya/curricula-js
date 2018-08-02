@@ -106,7 +106,6 @@ siguiente interfaz:
 * `path`: Ruta absoluta o relativa al archivo markdown.
 * `options`: Un objeto con las siguientes propiedades:
   - `validate`: ...
-  - `exclude`: ...
 
 ##### Valor de retorno
 
